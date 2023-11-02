@@ -1,12 +1,14 @@
 // Aquiring express web framework in the file
 const express = require("express");
 const app = express();
+
 // Using express router
 app.use("/", require("./routes"));
 // Setting up our view engine
 app.set("view engine", "ejs");
 //Setting up the path for the view folder
 app.set("views", "./views");
+app.use(express.static("./assets"));
 
 // Defining the port on which the website will run
 const port = 8000;

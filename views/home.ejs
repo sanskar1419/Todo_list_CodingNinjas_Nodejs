@@ -50,7 +50,7 @@
           <button type="Submit" class="btn-add">
             <i class="fa-solid fa-plus"></i> ADD TASK
           </button>
-          <button type="Submit" class="btn-delete">
+          <button type="button" class="btn-delete">
             <i class="fa-solid fa-trash"></i> DELETE TASK
           </button>
         </div>
@@ -66,12 +66,14 @@
                   type="checkbox"
                   name="delcheck"
                   class="delcheck"
-                  class="midcheckbox"
+                  checkedId="<%= i._id %>"
                 />
               </div>
               <div class="task-dueDate-container">
-                <p class="task-heading"><%= i.Description %></p>
-                <p>
+                <p class="task-heading" id="<%= i._id %>">
+                  <%= i.Description %>
+                </p>
+                <p class="due_date" id="<%= i._id + i.dueDate %>">
                   <i class="fa-regular fa-calendar-days"></i> <%= i.dueDate %>
                 </p>
               </div>

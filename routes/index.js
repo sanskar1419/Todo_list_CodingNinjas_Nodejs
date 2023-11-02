@@ -6,4 +6,5 @@ const homeController = require("../controllers/home_controller");
 // console.log("Router is working");
 router.get("/", homeController.home);
 router.post("/create-task", homeController.Add_task);
+router.post("/delete_todo_items", homeController.delete_task);
 module.exports = router;

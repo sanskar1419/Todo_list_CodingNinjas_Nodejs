@@ -29,3 +29,29 @@ module.exports.Add_task = async function (req, res) {
     res.status(500).send("Error in creating a Task");
   }
 };
+
+module.exports.delete_task = async function (req, res) {
+  try {
+    sp = req.query.id;
+    console.log(sp);
+  } catch (err) {
+    console.error("Error in Deleting a Task:", err);
+    // Handle the error appropriately (e.g., sending an error response)
+    res.status(500).send("Error in creating a Task");
+  }
+};
+
+module.exports.deleteTodo = function (req, res) {
+  sp = req.query.id; // getting the id from ui
+  newsp = sp.split(",");
+  for (let i = 0; i < newsp.length; i++) {
+    // looping over newsp  to delete all the checked value
+    TodoLists.findByIdAndDelete(newsp[i], function (err) {
+      if (err) {
+        console.log("err");
+        return;
+      }
+    });
+  }
+  return res.redirect("/");
+};

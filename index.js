@@ -1,6 +1,8 @@
 // Aquiring express web framework in the file
 const express = require("express");
 const app = express();
+// Using express router
+app.use("/", require("./routes"));
 
 // Defining the port on which the website will run
 const port = 8000;

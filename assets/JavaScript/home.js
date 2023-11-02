@@ -41,7 +41,7 @@ function checkedOrNot() {
 
 function deleteCheckedTask() {
   var checkedItems = document.querySelectorAll(".delcheck:checked");
-  console.log(checkedItems);
+  //   console.log(checkedItems);
   var idArr = [];
   for (let i = 0; i < checkedItems.length; i++) {
     var checkedItemId = checkedItems[i].getAttribute("checkedId");
@@ -56,26 +56,23 @@ function deleteCheckedTask() {
     return;
   }
 
-  httpRequest = new XMLHttpRequest();
-  if (!httpRequest) {
-    alert("Giving up :( Cannot Delete the item");
-    return false;
-  }
-  httpRequest.open("POST", "/delete_todo_items/?id=");
-  httpRequest.send();
+  //   httpRequest = new XMLHttpRequest();
+  //   if (!httpRequest) {
+  //     alert("Giving up :( Cannot Delete the item");
+  //     return false;
+  //   }
+  //   httpRequest.open("POST", "/delete_todo_items/?id=");
+  //   httpRequest.send();
 
-  //   $.ajax({
-  //     type: "post",
-  //     url: "/delete_todo_items/?id=" + idArr,
-  //     success: function () {
-  //       // on ajax sunnces i.e when data is delete
-  //       alert("Item is deleted ", "click ok to go back Home ", "success") // using sweet alert to show the data is delete
-  //         .then((redir) => {
-  //           window.location = "/";
-  //         });
-  //     },
-  //     error: function (err) {
-  //       console.log("Error : ", err);
-  //     },
-  //   });
+  $.ajax({
+    type: "post",
+    url: "/delete_todo_items/?id=" + idArr,
+    success: function () {
+      // on ajax sunnces i.e when data is delete
+      alert("Item is deleted "); // using sweet alert to show the data is delete
+    },
+    error: function (err) {
+      console.log("Error : ", err);
+    },
+  });
 }

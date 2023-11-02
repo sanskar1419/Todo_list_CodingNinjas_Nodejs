@@ -32,26 +32,17 @@ module.exports.Add_task = async function (req, res) {
 
 module.exports.delete_task = async function (req, res) {
   try {
-    sp = req.query.id;
-    console.log(sp);
+    var Tasks = req.query.id;
+    // console.log(Task_to_delete);
+    console.log(Tasks);
+    newsp = Tasks.split(",");
+    for (let i = 0; i < newsp.length; i++) {
+      await Todo_List.findByIdAndDelete(newsp[i]);
+    }
+    return res.redirect("/");
   } catch (err) {
     console.error("Error in Deleting a Task:", err);
     // Handle the error appropriately (e.g., sending an error response)
-    res.status(500).send("Error in creating a Task");
+    res.status(500).send("Error in Deleting a Task");
   }
-};
-
-module.exports.deleteTodo = function (req, res) {
-  sp = req.query.id; // getting the id from ui
-  newsp = sp.split(",");
-  for (let i = 0; i < newsp.length; i++) {
-    // looping over newsp  to delete all the checked value
-    TodoLists.findByIdAndDelete(newsp[i], function (err) {
-      if (err) {
-        console.log("err");
-        return;
-      }
-    });
-  }
-  return res.redirect("/");
 };

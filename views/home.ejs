@@ -57,26 +57,30 @@
       </form>
 
       <div class="task-unordered-list">
+        <% for(i of todo_list){ %>
         <ul>
           <li>
             <div class="checkbox-description-date-container">
               <div class="checkbox-container">
                 <input
                   type="checkbox"
-                  name="dcdscds"
-                  id="delcheck"
+                  name="delcheck"
+                  class="delcheck"
                   class="midcheckbox"
                 />
               </div>
               <div class="task-dueDate-container">
-                <p class="task-heading">Annual report submission</p>
-                <p><i class="fa-regular fa-calendar-days"></i> 12/07/2023</p>
+                <p class="task-heading"><%= i.Description %></p>
+                <p>
+                  <i class="fa-regular fa-calendar-days"></i> <%= i.dueDate %>
+                </p>
               </div>
             </div>
             <div class="category-place">
-              <p>Work</p>
+              <p><%= i.Category %></p>
             </div>
           </li>
+          <% } %>
         </ul>
       </div>
     </div>

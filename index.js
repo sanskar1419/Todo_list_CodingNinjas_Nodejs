@@ -1,5 +1,6 @@
 // Aquiring express web framework in the file
 const express = require("express");
+const db = require("./config/mongoose");
 const app = express();
 
 // Using express router

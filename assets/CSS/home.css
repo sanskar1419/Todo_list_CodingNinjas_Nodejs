@@ -1,3 +1,115 @@
+/* Styles to body */
 body {
-  background-color: blue;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+  font-family: "Times New Roman", Times, serif;
+  background: rgb(10, 182, 239);
+  color: rgb(177, 165, 165);
+}
+/* Styles to todo container...................................................................................................*/
+.Todo-container {
+  width: 60vw;
+  height: auto;
+  /* border: 2px solid black; */
+  background: white;
+}
+
+/* Style to app heading .................................................................................................... */
+.Todo-container h1 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  color: rgb(177, 165, 165);
+  margin-top: -2px;
+}
+/* .Todo-container hr {
+  margin-top: -20px;
+} */
+
+label {
+  color: rgb(177, 165, 165);
+  font-size: 1rem;
+  /* margin-bottom: 10px; */
+}
+.des-container {
+  width: 95%;
+  /* border: 2px solid red; */
+  margin-left: 15px;
+}
+
+.des-container input {
+  width: 95%;
+  height: 40px;
+  /* margin-left: 15px; */
+  outline: none;
+  border: transparent;
+  font-size: 0.9rem;
+  color: rgb(155, 141, 141);
+}
+
+.select-date-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.category-container {
+  width: 50%;
+  border-top: 1px solid rgb(177, 165, 165);
+  border-bottom: 1px solid rgb(177, 165, 165);
+  padding: 15px;
+}
+
+.category-container select {
+  width: 95%;
+  height: 30px;
+  outline: none;
+  border: transparent;
+  font-size: 0.9rem;
+  color: rgb(155, 141, 141);
+}
+.date-container {
+  width: 50%;
+  border-top: 1px solid rgb(177, 165, 165);
+  border-left: 1px solid rgb(177, 165, 165);
+  border-bottom: 1px solid rgb(177, 165, 165);
+  padding: 15px;
+}
+
+.date-container input {
+  width: 95%;
+  height: 30px;
+  outline: none;
+  border: transparent;
+  font-size: 0.9rem;
+  color: rgb(155, 141, 141);
+}
+
+.button-container {
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+button {
+  padding: 20px;
+  margin: 10px 0px;
+  outline: none;
+  border: transparent;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.btn-add {
+  background-color: black;
+  margin-right: 10px;
+}
+.btn-delete {
+  background-color: orange;
 }

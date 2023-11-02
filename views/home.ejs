@@ -4,10 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+    <script
+      src="https://kit.fontawesome.com/acf3eaf7bf.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./CSS/home.css" />
   </head>
   <body>
-    <h1>Todo list</h1>
+    <div class="Todo-container">
+      <h1>Todo list</h1>
+      <hr />
+      <form action="/create-task" method="post" id="input-form">
+        <div class="des-container">
+          <label for="Description">DESCRIPTION</label>
+          <br />
+          <input
+            type="textarea"
+            name="Description"
+            placeholder="What do you need to do?"
+            id="Description"
+            required
+          />
+        </div>
+        <!-- <hr /> -->
+        <div class="select-date-container">
+          <div class="category-container">
+            <label for="Category">CATEGORY</label>
+            <br />
+            <select name="Category" id="Category" required>
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="School">School</option>
+              <option value="Home">Home</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="date-container">
+            <label for="dueDate">DUE DATE</label>
+            <br />
+            <input type="date" name="dueDate" id="dueDate" required />
+          </div>
+        </div>
+        <div class="button-container">
+          <button type="Submit" class="btn-add">
+            <i class="fa-solid fa-plus"></i> ADD TASK
+          </button>
+          <button type="Submit" class="btn-delete">
+            <i class="fa-solid fa-trash"></i> DELETE TASK
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
   <script type="text/javascript" src="./JavaScript/home.js"></script>
 </html>

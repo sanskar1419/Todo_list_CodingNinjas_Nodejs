@@ -167,3 +167,16 @@ button {
   color: whitesmoke;
   border-radius: 5px;
 }
+
+.Home {
+  background-color: orange;
+}
+.Work {
+  background-color: rgb(44, 44, 174);
+}
+.School {
+  background-color: aqua;
+}
+.Other {
+  background-color: rgb(25, 202, 25);
+}

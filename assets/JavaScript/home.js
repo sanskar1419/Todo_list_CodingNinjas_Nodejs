@@ -1,5 +1,4 @@
 document.addEventListener("click", handleClickOnScreen);
-
 function handleClickOnScreen(event) {
   const target = event.target;
   console.log(target);
@@ -56,20 +55,12 @@ function deleteCheckedTask() {
     return;
   }
 
-  //   httpRequest = new XMLHttpRequest();
-  //   if (!httpRequest) {
-  //     alert("Giving up :( Cannot Delete the item");
-  //     return false;
-  //   }
-  //   httpRequest.open("POST", "/delete_todo_items/?id=");
-  //   httpRequest.send();
-
   $.ajax({
     type: "post",
     url: "/delete_todo_items/?id=" + idArr,
     success: function () {
-      // on ajax sunnces i.e when data is delete
-      alert("Item is deleted "); // using sweet alert to show the data is delete
+      alert("Item is deleted ");
+      window.location = "/";
     },
     error: function (err) {
       console.log("Error : ", err);

@@ -3,17 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Making title dynamic -->
     <title><%= title %></title>
+    <!-- Linking Fontawsome -->
     <script
       src="https://kit.fontawesome.com/acf3eaf7bf.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Linking Css -->
     <link rel="stylesheet" href="./CSS/home.css" />
   </head>
   <body>
     <div class="Todo-container">
+      <!-- Heading -->
       <h1>Todo list</h1>
       <hr />
+      <!-- Form to take Input -->
       <form action="/create-task" method="post" id="input-form">
         <div class="des-container">
           <label for="Description">DESCRIPTION</label>
@@ -46,6 +51,7 @@
             <input type="date" name="dueDate" id="dueDate" required />
           </div>
         </div>
+        <!-- Button to add or delete -->
         <div class="button-container">
           <button type="Submit" class="btn-add">
             <i class="fa-solid fa-plus"></i> ADD TASK
@@ -56,6 +62,7 @@
         </div>
       </form>
 
+      <!-- Showing data stores in db -->
       <div class="task-unordered-list">
         <% for(i of todo_list){ %>
         <ul>
@@ -87,10 +94,12 @@
       </div>
     </div>
   </body>
+  <!-- linking jQuery for AJAX request -->
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"
   ></script>
+  <!-- Linking Js -->
   <script type="text/javascript" src="./JavaScript/home.js"></script>
 </html>

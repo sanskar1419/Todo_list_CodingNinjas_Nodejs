@@ -31,11 +31,14 @@ body {
   margin-top: -20px;
 } */
 
+/* Appling style to all lable ................................................................................................ */
 label {
   color: rgb(177, 165, 165);
   font-size: 1rem;
   /* margin-bottom: 10px; */
 }
+
+/* Appling style to all input description, due date and category ..................................................................... */
 .des-container {
   width: 95%;
   /* border: 2px solid red; */
@@ -89,6 +92,7 @@ label {
   color: rgb(155, 141, 141);
 }
 
+/* Appling Style the add and del button ...................................................................................... */
 .button-container {
   /* border: 2px solid black; */
   display: flex;
@@ -114,6 +118,7 @@ button {
   background-color: orange;
 }
 
+/* Appling style to all task ................................................................................................ */
 .task-unordered-list {
   /* width: 90%; */
   /* border: 2px solid black; */
@@ -166,17 +171,4 @@ button {
   font-weight: bold;
   color: whitesmoke;
   border-radius: 5px;
-}
-
-.Home {
-  background-color: orange;
-}
-.Work {
-  background-color: rgb(44, 44, 174);
-}
-.School {
-  background-color: aqua;
-}
-.Other {
-  background-color: rgb(25, 202, 25);
 }

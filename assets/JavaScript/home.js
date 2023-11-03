@@ -1,4 +1,7 @@
+// Using event delegation To Handle click on screen
 document.addEventListener("click", handleClickOnScreen);
+
+// Function to check which element is clicked
 function handleClickOnScreen(event) {
   const target = event.target;
   console.log(target);
@@ -9,6 +12,7 @@ function handleClickOnScreen(event) {
   }
 }
 
+// Function to check weather checkbon is checked or not
 function checkedOrNot() {
   let checkBoxs = document.querySelectorAll(".delcheck");
   let taskHeadings = document.querySelectorAll(".task-heading");
@@ -16,6 +20,7 @@ function checkedOrNot() {
   //   console.log(checkBoxs);
   //   console.log(taskHeadings);
   for (let i = 0; i < taskHeadings.length; i++) {
+    // if they are checked line through over them otherwise keep them same
     if (checkBoxs[i].checked == true) {
       let taskHeading = document.getElementById(
         taskHeadings[i].getAttribute("id")
@@ -38,6 +43,7 @@ function checkedOrNot() {
   }
 }
 
+// If they are checked storing them in array and passing array as an ajax request for deleting
 function deleteCheckedTask() {
   var checkedItems = document.querySelectorAll(".delcheck:checked");
   //   console.log(checkedItems);
@@ -55,6 +61,7 @@ function deleteCheckedTask() {
     return;
   }
 
+  // Sending ajax request to delete checked element
   $.ajax({
     type: "post",
     url: "/delete_todo_items/?id=" + idArr,

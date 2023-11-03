@@ -1,6 +1,7 @@
+// Aquiring all the dococument stored in db
 const Todo_List = require("../models/todo_list");
 
-// Exporting home function for home page
+// Exporting home function for home page and Appling dynamic value to it
 module.exports.home = async function (req, res) {
   try {
     const taskLists = await Todo_List.find({});
@@ -14,6 +15,7 @@ module.exports.home = async function (req, res) {
   }
 };
 
+// function to add task as document in db
 module.exports.Add_task = async function (req, res) {
   try {
     const newTask = await Todo_List.create({
@@ -30,6 +32,7 @@ module.exports.Add_task = async function (req, res) {
   }
 };
 
+// In response to the AJAX request deleting all the checked element
 module.exports.delete_task = async function (req, res) {
   try {
     var Tasks = req.query.id;
